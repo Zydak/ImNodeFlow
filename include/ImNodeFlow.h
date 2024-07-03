@@ -74,7 +74,7 @@ namespace ImFlow
         /// @brief Background color
         ImU32 bg_color = IM_COL32(23, 16, 16, 0);
         /// @brief Background color when hovered
-        ImU32 bg_hover_color = IM_COL32(100, 100, 255, 70);
+        ImU32 bg_hover_color = IM_COL32(255, 255, 255, 70);
         /// @brief Border color
         ImU32 border_color = IM_COL32(255, 255, 255, 0);
 
@@ -87,7 +87,7 @@ namespace ImFlow
         /// @brief Thickness of the outline of a selected link
         float link_selected_outline_thickness = 0.5f;
         /// @brief Color of the outline of a selected link
-        ImU32 outline_color = IM_COL32(80, 20, 255, 200);
+        ImU32 outline_color = IM_COL32(255, 255, 255, 200);
 
         /// @brief Spacing between pin content and socket
         float socket_padding = 6.6f;
@@ -118,7 +118,7 @@ namespace ImFlow
         /// @brief List of less common properties
         PinStyleExtras extra;
     public:
-        /// @brief <BR>Default cyan style
+		/// @brief <BR>Default cyan style
         static std::shared_ptr<PinStyle> cyan() { return std::make_shared<PinStyle>(PinStyle(IM_COL32(87,155,185,255), 0, 4.f, 4.67f, 3.7f, 1.f)); }
         /// @brief <BR>Default green style
         static std::shared_ptr<PinStyle> green() { return std::make_shared<PinStyle>(PinStyle(IM_COL32(90,191,93,255), 4, 4.f, 4.67f, 4.2f, 1.3f)); }
@@ -146,15 +146,15 @@ namespace ImFlow
         NodeStyle(ImU32 header_bg, ImColor header_title_color, float radius) :header_bg(header_bg), header_title_color(header_title_color), radius(radius) {}
 
         /// @brief Body's background color
-        ImU32 bg = IM_COL32(55,64,75,255);
+        ImU32 bg = IM_COL32(25, 25, 25, 255);
         /// @brief Header's background color
         ImU32 header_bg;
         /// @brief Header title color
         ImColor header_title_color;
         /// @brief Border color
-        ImU32 border_color = IM_COL32(30,38,41,140);
+        ImU32 border_color = IM_COL32(41, 41, 41, 140);
         /// @brief Border color when selected
-        ImU32 border_selected_color = IM_COL32(170, 190, 205, 230);
+        ImU32 border_selected_color = IM_COL32(205, 205, 205, 230);
 
         /// @brief Body's content padding (Left Top Right Bottom)
         ImVec4 padding = ImVec4(13.7f, 6.f, 13.7f, 2.f);
@@ -165,7 +165,7 @@ namespace ImFlow
         /// @brief Border thickness when selected
         float border_selected_thickness = 2.f;
     public:
-        /// @brief <BR>Default cyan style
+		/// @brief <BR>Default cyan style
         static std::shared_ptr<NodeStyle> cyan() { return std::make_shared<NodeStyle>(IM_COL32(71,142,173,255), ImColor(233,241,244,255), 6.5f); }
         /// @brief <BR>Default green style
         static std::shared_ptr<NodeStyle> green() { return std::make_shared<NodeStyle>(IM_COL32(90,191,93,255), ImColor(233,241,244,255), 3.5f); }
@@ -901,7 +901,7 @@ namespace ImFlow
             :m_uid(uid), m_name(std::move(name)), m_style(std::move(style)), m_type(kind), m_parent(parent), m_inf(inf)
             {
                 if(!m_style)
-                    m_style = PinStyle::cyan();
+                    m_style = PinStyle::white();
             }
 
         virtual ~Pin() = default;
