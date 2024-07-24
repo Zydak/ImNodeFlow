@@ -1154,6 +1154,11 @@ namespace ImFlow
         ~OutPin() override { for (auto &l: m_links) if (!l.expired()) l.lock()->right()->deleteLink(); }
 
         /**
+         * @brief <BR>Calculate output value based on set behaviour
+         */
+        void resolve() override { m_val = m_behaviour(); }
+
+        /**
          * @brief <BR>Create link between pins
          * @param other Pointer to the other pin
          */
