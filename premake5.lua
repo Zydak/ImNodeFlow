@@ -24,6 +24,7 @@ project "imnodeflow"
     {
         "IMGUI_DEFINE_MATH_OPERATORS"
     }
+    buildoptions { "/MP" }
 
     filter "platforms:Windows"
         system "Windows"
